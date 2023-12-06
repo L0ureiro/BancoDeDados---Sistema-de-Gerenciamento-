@@ -38,7 +38,7 @@ CREATE TABLE Projeto (
     id_equipe INTEGER NOT NULL,
     nome TEXT NOT NULL,
     orcamento FLOAT NOT NULL,
-    descricao_projeto TEXT,
+    descricao TEXT,
     FOREIGN KEY (id_equipe) REFERENCES Equipe(id_equipe)
 );
 -- Criação da tabela Tarefa
