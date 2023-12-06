@@ -31,7 +31,7 @@ SELECT Projeto.nome as 'Projeto', Equipe.nome as Equipe, orcamento as 'Orçament
     ORDER BY orcamento DESC;
 
 -- (7)   Consulta com União: combinação de resultados de duas consultas.
-SELECT id AS 'Id original', nome AS 'Nome', descricao_projeto AS 'Descrição' FROM Projeto
+SELECT id AS 'Id original', nome AS 'Nome', descricao AS 'Descrição' FROM Projeto
 UNION
 SELECT id AS 'Id original', nome AS 'Nome', descricao as 'Descrição' FROM Departamento;
 
