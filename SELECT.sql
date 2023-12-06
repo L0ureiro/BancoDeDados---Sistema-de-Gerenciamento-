@@ -6,10 +6,8 @@ SELECT *
 SELECT
     Empregado.nome AS 'Empregado',
     Telefone.telefone AS 'Telefone'
-FROM
-    Empregado
-JOIN
-    Telefone ON Empregado.id = Telefone.id_empregado;
+FROM Empregado
+JOIN Telefone ON Empregado.id = Telefone.id_empregado;
 
 -- (3)   Consulta de Agregação: utilização de funções de agregação para calcular estatísticas ou totalizações.
 SELECT SUM(orcamento) AS 'Orçamento total'
@@ -26,10 +24,10 @@ SELECT nome AS Empregado, email AS 'E-mail'
     ORDER BY nome ASC;
 
 -- (6)   Consulta com Subconsulta: incorporação de uma subconsulta para obter informações mais detalhadas.
-SELECT projeto.nome as 'Projeto', equipe.nome as Equipe, orcamento as 'Orçamento'
+SELECT Projeto.nome as 'Projeto', Equipe.nome as Equipe, orcamento as 'Orçamento'
     FROM Projeto
-    JOIN (SELECT id, nome FROM Equipe) AS equipe
-    ON Projeto.id_equipe = equipe.id
+    JOIN (SELECT id, nome FROM Equipe) AS Equipe
+    ON Projeto.id_equipe = Equipe.id
     ORDER BY orcamento DESC;
 
 -- (7)   Consulta com União: combinação de resultados de duas consultas.
@@ -49,7 +47,7 @@ SELECT nome as Nome FROM Empregado
     ORDER BY nome DESC
     LIMIT 5;
 
--- (10)        Consulta Complexa: desenvolvimento de uma consulta mais complexa que envolva múltiplas tabelas e condições.
+-- (10)  Consulta Complexa: desenvolvimento de uma consulta mais complexa que envolva múltiplas tabelas e condições.
 SELECT Empregado.nome AS 'Duplo líder' FROM Empregado
     WHERE Empregado.id IN (SELECT id_lider FROM Equipe WHERE id_lider IS NOT NULL)
     AND Empregado.id IN (SELECT id_chefe FROM Departamento WHERE id_chefe IS NOT NULL)
