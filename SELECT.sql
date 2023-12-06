@@ -26,7 +26,7 @@ SELECT nome AS Empregado, email AS 'E-mail'
     ORDER BY nome ASC;
 
 -- (6)   Consulta com Subconsulta: incorporação de uma subconsulta para obter informações mais detalhadas.
-SELECT projeto.nome as Projeto, equipe.nome as Equipe, orcamento as 'Orçamento'
+SELECT projeto.nome as 'Projeto', equipe.nome as Equipe, orcamento as 'Orçamento'
     FROM Projeto
     JOIN (SELECT id, nome FROM Equipe) AS equipe
     ON Projeto.id_equipe = equipe.id
